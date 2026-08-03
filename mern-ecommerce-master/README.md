@@ -8,37 +8,12 @@
 ![Stripe](https://img.shields.io/badge/Stripe-Payments-blueviolet?logo=stripe)
 ![Redis](https://img.shields.io/badge/Redis-Session-red?logo=redis)
 ![JWT](https://img.shields.io/badge/Auth-JWT-orange)
-![License](https://img.shields.io/badge/License-MIT-blue)
 
 </p>
 
 A modern **full-stack MERN E-Commerce application** featuring secure JWT authentication, Redis-powered session management, Stripe payment integration, Cloudinary image uploads, role-based authorization, and an intuitive shopping experience.
 
 Designed with scalable architecture, clean REST APIs, and production-ready deployment.
-
----
-
-# 🚀 Live Demo
-
-### Frontend
-https://your-frontend-url.vercel.app
-
-### Backend API
-https://your-backend-url.onrender.com
-
----
-
-# 📸 Screenshots
-
-> Add screenshots here after deployment.
-
-| Home | Product | Cart |
-|------|---------|------|
-| Image | Image | Image |
-
-| Checkout | Admin Dashboard |
-|-----------|----------------|
-| Image | Image |
 
 ---
 
@@ -459,9 +434,9 @@ for production.
 
 **Rajinder Sharma**
 
-GitHub: https://github.com/yourusername
+GitHub: https://github.com/rajinderkumar143/mern-ecommerce.git
 
-LinkedIn: https://linkedin.com/in/yourprofile
+LinkedIn: www.linkedin.com/in/rajinder-sharma-0231a7277
 
 ---
 
