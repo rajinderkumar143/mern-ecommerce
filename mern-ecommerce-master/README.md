@@ -1,163 +1,468 @@
-# SwiftCart - MERN E-Commerce Platform
+# 🛒 SwiftCart - Full Stack MERN E-Commerce Platform
 
-Full-stack e-commerce application built with MongoDB, Express, React, and Node.js.
+<p align="center">
 
-## Features
+![React](https://img.shields.io/badge/React-19-blue?logo=react)
+![Node.js](https://img.shields.io/badge/Node.js-Express-green?logo=node.js)
+![MongoDB](https://img.shields.io/badge/MongoDB-Database-brightgreen?logo=mongodb)
+![Stripe](https://img.shields.io/badge/Stripe-Payments-blueviolet?logo=stripe)
+![Redis](https://img.shields.io/badge/Redis-Session-red?logo=redis)
+![JWT](https://img.shields.io/badge/Auth-JWT-orange)
+![License](https://img.shields.io/badge/License-MIT-blue)
 
-- JWT authentication with access and refresh tokens
-- Redis backed refresh token storage
-- Role based access for admin and customer
-- Product categories and featured products
-- Cart management and quantity updates
-- Stripe checkout integration
-- Coupon support and order creation after payment
+</p>
 
-## Tech Stack
+A modern **full-stack MERN E-Commerce application** featuring secure JWT authentication, Redis-powered session management, Stripe payment integration, Cloudinary image uploads, role-based authorization, and an intuitive shopping experience.
 
-- Frontend: React, Vite, Zustand, Axios, Tailwind CSS, Framer Motion
-- Backend: Node.js, Express, MongoDB, Mongoose
-- Auth and Cache: JWT, Upstash Redis
-- Payments: Stripe Checkout
-- Media: Cloudinary
+Designed with scalable architecture, clean REST APIs, and production-ready deployment.
 
-## Project Structure
+---
 
-- backend: API, auth, business logic, database models
-- frontend: React app and UI components
+# 🚀 Live Demo
 
-## Prerequisites
+### Frontend
+https://your-frontend-url.vercel.app
 
-- Node.js 18+
-- npm 9+
-- MongoDB database
-- Upstash Redis database
-- Stripe account (test mode is fine)
-- Cloudinary account
+### Backend API
+https://your-backend-url.onrender.com
 
-## Environment Variables
+---
 
-Create a file at backend/.env with:
+# 📸 Screenshots
 
+> Add screenshots here after deployment.
+
+| Home | Product | Cart |
+|------|---------|------|
+| Image | Image | Image |
+
+| Checkout | Admin Dashboard |
+|-----------|----------------|
+| Image | Image |
+
+---
+
+# ✨ Features
+
+## Authentication
+
+- JWT Authentication
+- Access & Refresh Tokens
+- Secure Cookie Authentication
+- Refresh Token Rotation
+- Password Hashing using bcrypt
+- Protected Routes
+- Automatic Login Persistence
+
+---
+
+## User Features
+
+- User Registration
+- User Login
+- Browse Products
+- Browse Categories
+- Featured Products
+- Product Details
+- Add to Cart
+- Update Cart Quantity
+- Remove from Cart
+- Apply Coupons
+- Secure Checkout
+- Order Confirmation
+
+---
+
+## Admin Features
+
+- Admin Authentication
+- Create Products
+- Update Products
+- Delete Products
+- Upload Product Images
+- Manage Categories
+- View Orders
+
+---
+
+## Payment
+
+- Stripe Checkout Integration
+- Test & Live Mode Support
+- Payment Verification
+- Automatic Order Creation
+- Purchase Success Page
+
+---
+
+## Security
+
+- JWT Authentication
+- Refresh Token Storage in Redis
+- Password Hashing
+- HTTP Only Cookies
+- Role Based Authorization
+- Environment Variables
+- Protected Admin APIs
+
+---
+
+# 🛠 Tech Stack
+
+## Frontend
+
+- React
+- Vite
+- Zustand
+- Axios
+- Tailwind CSS
+- Framer Motion
+
+---
+
+## Backend
+
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+
+---
+
+## Authentication
+
+- JWT
+- bcrypt
+
+---
+
+## Storage & Cache
+
+- Upstash Redis
+
+---
+
+## Media Storage
+
+- Cloudinary
+
+---
+
+## Payments
+
+- Stripe Checkout
+
+---
+
+# 🏗 Architecture
+
+```
+                React Frontend
+                      │
+                Axios API Calls
+                      │
+              Express REST API
+                      │
+        ┌─────────────┴─────────────┐
+        │                           │
+    MongoDB                    Upstash Redis
+ (Users, Products,          Refresh Tokens
+ Orders, Coupons)
+        │
+        │
+    Cloudinary
+(Product Images)
+
+        │
+
+      Stripe
+  Payment Gateway
+```
+
+---
+
+# 📂 Folder Structure
+
+```
+SwiftCart
+│
+├── backend
+│   ├── config
+│   ├── controllers
+│   ├── middleware
+│   ├── models
+│   ├── routes
+│   ├── utils
+│   ├── lib
+│   ├── server.js
+│   └── package.json
+│
+├── frontend
+│   ├── src
+│   │   ├── components
+│   │   ├── pages
+│   │   ├── store
+│   │   ├── hooks
+│   │   ├── utils
+│   │   └── App.jsx
+│   └── package.json
+│
+└── README.md
+```
+
+---
+
+# ⚙️ Environment Variables
+
+Create a `.env` file inside **backend/**
+
+```env
 PORT=5000
-MONGO_URI=your_mongo_connection_string
-UPSTASH_REDIS_URL=rediss://default:password@your-host:6379
-ACCESS_TOKEN_SECRET=your_access_token_secret
-REFRESH_TOKEN_SECRET=your_refresh_token_secret
+
+MONGO_URI=your_mongodb_connection
+
+UPSTASH_REDIS_URL=your_redis_url
+
+ACCESS_TOKEN_SECRET=your_access_secret
+
+REFRESH_TOKEN_SECRET=your_refresh_secret
+
 CLOUDINARY_CLOUD_NAME=your_cloud_name
-CLOUDINARY_API_KEY=your_cloudinary_api_key
-CLOUDINARY_API_SECRET=your_cloudinary_api_secret
-STRIPE_SECRET_KEY=sk_test_your_stripe_secret_key
+
+CLOUDINARY_API_KEY=your_api_key
+
+CLOUDINARY_API_SECRET=your_api_secret
+
+STRIPE_SECRET_KEY=sk_test_xxxxxxxxx
+
 CLIENT_URL=http://localhost:5173
+
 NODE_ENV=development
+```
 
-## Installation
+---
 
-Install backend and root dependencies:
+# 💻 Installation
+
+## Clone Repository
+
+```bash
+git clone https://github.com/yourusername/swiftcart.git
+
+cd swiftcart
+```
+
+---
+
+## Install Backend
+
+```bash
+npm install
+```
+
+---
+
+## Install Frontend
+
+```bash
+cd frontend
 
 npm install
+```
 
-Install frontend dependencies:
+---
 
+# ▶ Running Locally
+
+## Start Backend
+
+```bash
+npm run dev
+```
+
+---
+
+## Start Frontend
+
+```bash
 cd frontend
-npm install
-
-## Running Locally
-
-Run backend from project root:
 
 npm run dev
+```
 
-Run frontend in a second terminal:
+---
 
-cd frontend
-npm run dev
+## URLs
 
-App URLs:
+Frontend
 
-- Frontend: http://localhost:5173
-- Backend API: http://localhost:5000
+```
+http://localhost:5173
+```
 
-## Stripe Test Checkout
+Backend
 
-Use this test card in Stripe Checkout:
+```
+http://localhost:5000
+```
 
-- Card Number: 4242 4242 4242 4242
-- Expiry: any future date
-- CVC: any 3 digits
-- ZIP: any valid value
+---
 
-## Scripts
+# 💳 Stripe Test Card
 
-From project root:
+| Field | Value |
+|--------|------|
+| Card Number | 4242 4242 4242 4242 |
+| Expiry | Any Future Date |
+| CVC | Any 3 Digits |
+| ZIP | Any Valid ZIP |
 
-- npm run dev: start backend with nodemon
-- npm run start: start backend with node
-- npm run build: install deps and build frontend
+---
 
-From frontend folder:
+# 📦 API Modules
 
-- npm run dev: start Vite frontend
-- npm run build: production frontend build
+### Authentication
 
-## Deployment
+- Register
+- Login
+- Logout
+- Refresh Token
 
-### Option A: Render (Backend) + Vercel (Frontend)
+---
 
-Backend deployment (Render):
+### Products
 
-- Create a new Web Service from this repository.
-- Root Directory: leave default (project root).
-- Build Command: npm install
-- Start Command: npm run start
-- Add backend environment variables:
-	- PORT=5000
-	- MONGO_URI
-	- UPSTASH_REDIS_URL
-	- ACCESS_TOKEN_SECRET
-	- REFRESH_TOKEN_SECRET
-	- CLOUDINARY_CLOUD_NAME
-	- CLOUDINARY_API_KEY
-	- CLOUDINARY_API_SECRET
-	- STRIPE_SECRET_KEY
-	- CLIENT_URL (set this to your frontend deployed URL)
-	- NODE_ENV=production
+- Get Products
+- Featured Products
+- Categories
+- Product Details
+- Create Product
+- Update Product
+- Delete Product
 
-Frontend deployment (Vercel):
+---
 
-- Import the same repository into Vercel.
-- Set Root Directory to frontend.
-- Framework Preset: Vite.
-- Build Command: npm run build
-- Output Directory: dist
-- Add frontend environment variable:
-	- VITE_API_URL=https://your-backend-domain/api
+### Cart
 
-After deploying frontend, update backend CLIENT_URL:
+- Add Item
+- Remove Item
+- Update Quantity
+- Clear Cart
 
-- CLIENT_URL must exactly match your frontend deployed URL.
+---
 
-### Important for this codebase
+### Coupons
 
-- Current frontend axios setup uses http://localhost:5000/api in development and /api in production.
-- If backend and frontend are deployed on different domains, set frontend API base URL using a VITE_API_URL variable and update frontend axios config accordingly.
-- Stripe keys must match mode:
-	- Test mode: use pk_test and sk_test
-	- Live mode: use pk_live and sk_live
+- Validate Coupon
+- Apply Coupon
 
-### Post-deploy checklist
+---
 
-- Signup and login work.
-- Category products are visible.
-- Add to cart works.
-- Stripe checkout opens and redirects back to purchase-success.
-- Order is created in database after successful payment.
+### Payments
 
-## Notes
+- Create Stripe Checkout Session
+- Payment Success
+- Create Order
 
-- Start backend first, then frontend.
-- In development, frontend proxies API requests to backend.
-- Payment flow runs in Stripe test mode when using sk_test and pk_test keys.
+---
 
-## Resume Friendly Summary
+# 📈 Performance & Scalability
 
-Built a full-stack MERN e-commerce platform with JWT authentication, Redis backed refresh-token handling, Stripe checkout, category-based product discovery, cart workflows, and admin product management.
+- Modular REST API Architecture
+- Centralized Error Handling
+- Secure Authentication Flow
+- Stateless Access Tokens
+- Redis Session Management
+- Cloud Image Storage
+- Optimized React State using Zustand
+
+---
+
+# 🚀 Deployment
+
+## Backend
+
+Deploy using:
+
+- Render
+- Railway
+- DigitalOcean
+- AWS EC2
+
+---
+
+## Frontend
+
+Deploy using:
+
+- Vercel
+- Netlify
+
+---
+
+Remember to update:
+
+```
+CLIENT_URL
+```
+
+and
+
+```
+VITE_API_URL
+```
+
+for production.
+
+---
+
+# ✅ Post Deployment Checklist
+
+- User Registration
+- Login
+- Product Listing
+- Featured Products
+- Cart Functionality
+- Coupon Validation
+- Stripe Checkout
+- Order Creation
+- Admin CRUD Operations
+
+---
+
+# 🎯 Resume Highlights
+
+- Built a production-ready full-stack MERN e-commerce platform with secure JWT authentication and Redis-based refresh token management.
+- Integrated Stripe Checkout for secure online payments with automatic order creation after successful transactions.
+- Developed scalable REST APIs using Express.js and MongoDB following modular architecture and best backend practices.
+- Implemented role-based authorization for customers and administrators, enabling secure product and order management.
+- Optimized frontend performance using React, Zustand, Axios, Tailwind CSS, and Framer Motion to deliver a responsive shopping experience.
+
+---
+
+# 📚 Future Improvements
+
+- Wishlist
+- Product Reviews
+- Ratings
+- Search & Filters
+- Email Notifications
+- Inventory Management
+- Sales Analytics Dashboard
+- Order Tracking
+- Multiple Payment Methods
+- PWA Support
+
+---
+
+# 👨‍💻 Author
+
+**Rajinder Sharma**
+
+GitHub: https://github.com/yourusername
+
+LinkedIn: https://linkedin.com/in/yourprofile
+
+---
+
+## ⭐ If you like this project, consider giving it a Star!
