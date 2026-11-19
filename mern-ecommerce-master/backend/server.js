@@ -1,6 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
+import cors from "cors";
 import path from "path";
 import { fileURLToPath } from "url";
 
@@ -25,6 +26,12 @@ const rootDir = path.resolve();
 
 app.use(express.json({ limit: "10mb" })); // allows you to parse the body of the request
 app.use(cookieParser());
+app.use(
+	cors({
+		origin: process.env.CLIENT_URL,
+		credentials: true,
+	})
+);
 
 app.use("/api/auth", authRoutes);
 app.use("/api/products", productRoutes);
@@ -50,4 +57,8 @@ const startServer = async () => {
 	});
 };
 
-startServer();
+export default app;
+
+if (process.env.VERCEL !== "1") {
+	startServer();
+}
