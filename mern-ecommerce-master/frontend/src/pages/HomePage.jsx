@@ -21,16 +21,19 @@ const HomePage = () => {
 	}, [fetchFeaturedProducts]);
 
 	return (
-		<div className='relative min-h-screen text-white overflow-hidden'>
-			<div className='relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16'>
-				<h1 className='text-center text-5xl sm:text-6xl font-bold text-emerald-400 mb-4'>
-					Explore Our Categories
-				</h1>
-				<p className='text-center text-xl text-gray-300 mb-12'>
-					Discover the latest trends in eco-friendly fashion
-				</p>
+		<div className='relative min-h-screen overflow-hidden'>
+			<div className='sc-container relative z-10 py-12 sm:py-16'>
+				<div className='mx-auto mb-12 max-w-3xl text-center'>
+					<p className='sc-eyebrow mb-4'>Curated for your everyday</p>
+					<h1 className='text-4xl font-black tracking-tight text-[#172033] sm:text-6xl'>
+						Style that moves <span className='text-[#087f72]'>with you.</span>
+					</h1>
+					<p className='mx-auto mt-5 max-w-xl text-base leading-7 text-[#64748b] sm:text-lg'>
+						Discover considered essentials and standout pieces, delivered with a simpler, more thoughtful shopping experience.
+					</p>
+				</div>
 
-				<div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4'>
+				<div className='grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3'>
 					{categories.map((category) => (
 						<CategoryItem category={category} key={category.name} />
 					))}

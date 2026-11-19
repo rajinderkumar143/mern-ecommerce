@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 
 const CategoryItem = ({ category }) => {
 	return (
-		<div className='relative overflow-hidden h-96 w-full rounded-lg group'>
+		<div className='group relative h-80 w-full overflow-hidden rounded-2xl shadow-[0_14px_30px_rgba(23,32,51,0.12)]'>
 			<Link to={"/category" + category.href}>
 				<div className='w-full h-full cursor-pointer'>
-					<div className='absolute inset-0 bg-gradient-to-b from-transparent to-gray-900 opacity-50 z-10' />
+					<div className='absolute inset-0 z-10 bg-gradient-to-t from-[#172033]/80 via-[#172033]/10 to-transparent' />
 					<img
 						src={category.imageUrl}
 						alt={category.name}
@@ -13,8 +13,8 @@ const CategoryItem = ({ category }) => {
 						loading='lazy'
 					/>
 					<div className='absolute bottom-0 left-0 right-0 p-4 z-20'>
-						<h3 className='text-white text-2xl font-bold mb-2'>{category.name}</h3>
-						<p className='text-gray-200 text-sm'>Explore {category.name}</p>
+						<h3 className='mb-1 text-2xl font-black text-white'>{category.name}</h3>
+						<p className='text-sm text-white/80'>Shop the edit <span aria-hidden='true'>→</span></p>
 					</div>
 				</div>
 			</Link>

@@ -17,22 +17,21 @@ const ProductCard = ({ product }) => {
 	};
 
 	return (
-		<div className='flex w-full relative flex-col overflow-hidden rounded-lg border border-gray-700 shadow-lg'>
-			<div className='relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl'>
+		<div className='sc-card group flex w-full relative flex-col overflow-hidden transition duration-200 hover:-translate-y-1 hover:shadow-[0_18px_38px_rgba(23,32,51,0.12)]'>
+			<div className='relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl bg-[#eef5f2]'>
 				<img className='object-cover w-full' src={product.image} alt='product image' />
-				<div className='absolute inset-0 bg-black bg-opacity-20' />
+				<div className='absolute inset-0 bg-[#172033]/5 transition group-hover:bg-transparent' />
 			</div>
 
 			<div className='mt-4 px-5 pb-5'>
-				<h5 className='text-xl font-semibold tracking-tight text-white'>{product.name}</h5>
+				<h5 className='text-lg font-bold tracking-tight text-[#172033]'>{product.name}</h5>
 				<div className='mt-2 mb-5 flex items-center justify-between'>
 					<p>
-						<span className='text-3xl font-bold text-emerald-400'>${product.price}</span>
+						<span className='text-2xl font-black text-[#087f72]'>${product.price}</span>
 					</p>
 				</div>
 				<button
-					className='flex items-center justify-center rounded-lg bg-emerald-600 px-5 py-2.5 text-center text-sm font-medium
-					 text-white hover:bg-emerald-700 focus:outline-none focus:ring-4 focus:ring-emerald-300'
+					className='sc-button sc-button-primary w-full'
 					onClick={handleAddToCart}
 				>
 					<ShoppingCart size={22} className='mr-2' />

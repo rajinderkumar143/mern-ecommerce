@@ -1,4 +1,4 @@
-import { ShoppingCart, UserPlus, LogIn, LogOut, Lock } from "lucide-react";
+import { ShoppingCart, UserPlus, LogIn, LogOut, Lock, Search } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useUserStore } from "../stores/useUserStore";
 import { useCartStore } from "../stores/useCartStore";
@@ -9,33 +9,36 @@ const Navbar = () => {
 	const { cart } = useCartStore();
 
 	return (
-		<header className='fixed top-0 left-0 w-full bg-gray-900 bg-opacity-90 backdrop-blur-md shadow-lg z-40 transition-all duration-300 border-b border-emerald-800'>
-			<div className='container mx-auto px-4 py-3'>
-				<div className='flex flex-wrap justify-between items-center'>
-					<Link to='/' className='text-2xl font-bold text-emerald-400 items-center space-x-2 flex'>
-						E-Commerce
+		<header className='fixed top-0 left-0 w-full bg-white/95 backdrop-blur-md shadow-[0_1px_0_rgba(220,229,225,0.9)] z-40'>
+			<div className='sc-container py-3'>
+				<div className='flex flex-wrap items-center justify-between gap-4'>
+					<Link to='/' className='flex items-center gap-2 text-2xl font-black tracking-tight text-[#172033]'>
+						<span className='flex h-9 w-9 items-center justify-center rounded-xl bg-[#087f72] text-sm text-white'>S</span>
+						Swift<span className='text-[#087f72]'>Cart</span>
 					</Link>
 
-					<nav className='flex flex-wrap items-center gap-4'>
+					<div className='order-3 flex w-full max-w-xl items-center rounded-xl border border-[#dce5e1] bg-[#f7f8f6] px-3 py-2 md:order-none md:flex-1'>
+						<Search size={18} className='text-[#94a3b8]' />
+						<input aria-label='Search products' placeholder='Search products, categories, and more' className='w-full bg-transparent px-2 text-sm text-[#172033] outline-none placeholder:text-[#94a3b8]' />
+					</div>
+
+					<nav className='flex flex-wrap items-center gap-2 sm:gap-4'>
 						<Link
 							to={"/"}
-							className='text-gray-300 hover:text-emerald-400 transition duration-300
-					 ease-in-out'
+							className='hidden text-sm font-semibold text-[#64748b] transition hover:text-[#087f72] sm:block'
 						>
 							Home
 						</Link>
 						{user && (
 							<Link
 								to={"/cart"}
-								className='relative group text-gray-300 hover:text-emerald-400 transition duration-300 
-							ease-in-out'
+								className='relative group rounded-lg p-2 text-sm font-semibold text-[#64748b] transition hover:bg-[#eef5f2] hover:text-[#087f72]'
 							>
 								<ShoppingCart className='inline-block mr-1 group-hover:text-emerald-400' size={20} />
 								<span className='hidden sm:inline'>Cart</span>
 								{cart.length > 0 && (
 									<span
-										className='absolute -top-2 -left-2 bg-emerald-500 text-white rounded-full px-2 py-0.5 
-									text-xs group-hover:bg-emerald-400 transition duration-300 ease-in-out'
+										className='absolute -right-1 -top-1 rounded-full bg-[#d97706] px-1.5 py-0.5 text-xs text-white'
 									>
 										{cart.length}
 									</span>
@@ -44,8 +47,7 @@ const Navbar = () => {
 						)}
 						{isAdmin && (
 							<Link
-								className='bg-emerald-700 hover:bg-emerald-600 text-white px-3 py-1 rounded-md font-medium
-								 transition duration-300 ease-in-out flex items-center'
+								className='sc-button sc-button-primary px-3 py-2'
 								to={"/secret-dashboard"}
 							>
 								<Lock className='inline-block mr-1' size={18} />
@@ -55,8 +57,7 @@ const Navbar = () => {
 
 						{user ? (
 							<button
-								className='bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 
-						rounded-md flex items-center transition duration-300 ease-in-out'
+								className='sc-button border border-[#dce5e1] bg-white text-[#172033] hover:bg-[#eef5f2]'
 								onClick={logout}
 							>
 								<LogOut size={18} />
@@ -66,16 +67,14 @@ const Navbar = () => {
 							<>
 								<Link
 									to={"/signup"}
-									className='bg-emerald-600 hover:bg-emerald-700 text-white py-2 px-4 
-									rounded-md flex items-center transition duration-300 ease-in-out'
+									className='sc-button sc-button-primary'
 								>
 									<UserPlus className='mr-2' size={18} />
 									Sign Up
 								</Link>
 								<Link
 									to={"/login"}
-									className='bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 
-									rounded-md flex items-center transition duration-300 ease-in-out'
+									className='sc-button border border-[#dce5e1] bg-white text-[#172033] hover:bg-[#eef5f2]'
 								>
 									<LogIn className='mr-2' size={18} />
 									Login
