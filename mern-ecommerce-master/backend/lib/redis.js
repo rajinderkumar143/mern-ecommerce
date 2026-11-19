@@ -15,7 +15,7 @@ if (!redisUrl) {
 }
 
 export const redis = new Redis(redisUrl, {
-	maxRetriesPerRequest: 1,
+	maxRetriesPerRequest: 10,
 	connectTimeout: 10000,
 });
 
