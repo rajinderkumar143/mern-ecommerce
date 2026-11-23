@@ -317,8 +317,8 @@ Building SwiftCart helped me gain practical experience with:
 
 **YOUR NAME**
 
-- GitHub: [@rajinderkumar143](https://github.com/rajinderkumar143
-- LinkedIn: [Rajinder Kumar](www.linkedin.com/in/rajinder-kumar-0231a7277)
+- GitHub: https://github.com/rajinderkumar143
+- LinkedIn: www.linkedin.com/in/rajinder-kumar-0231a7277
 
 ---
 
